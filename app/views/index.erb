@@ -1,0 +1,12 @@
+<h1 style="text-align:center">Notes</h1>
+<br />
+<% @notes.each_pair do |dir, files|%>
+  <h2><%= dir %></h2>
+  <%files.each do |file|%>
+    <% new_file = file.split('.')[0..-2].first %>
+    <%logger.info "Check this out ! #{dir}"%>
+    <p><a href=<%= "#{dir}/#{new_file}" %>>
+      <%= new_file %>
+    </a></p>
+  <% end %>
+<% end %>
